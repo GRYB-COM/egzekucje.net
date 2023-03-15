@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Version>2.1.1</Version>
+    <Authors>Infosystemowi Egzekutorzy: Mariusz, Czarek, Władek, Bartek i Sławek</Authors>
+    <Company>Usługi Informatyczne INFO-SYSTEM Roman i Tadeusz Groszek sp.j.</Company>
+    <Description>Moduł wspierający przygotowanie dokumentów związanych z egzekucją administracyjną w jednostkach samorządu terytorialnego.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>© 2021 U. I. INFO-SYSTEM</Copyright>
+    <PackageReleaseNotes>Dodanie funkcji: PobierzListeKontDlaAdresu PobierzAdresyAdresata</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="InfoSystem\Db\**" />
+    <EmbeddedResource Remove="InfoSystem\Db\**" />
+    <None Remove="InfoSystem\Db\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Zasoby\zaleglosci.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Zasoby\zaleglosci.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.0.0" />
+    <PackageReference Include="BOS.NET" Version="1.0.3" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="EntityFramework.Firebird" Version="7.5.0" />
+    <PackageReference Include="InfoSystemFirebirdConfig" Version="1.1.0" />
+    <PackageReference Include="ini-parser" Version="2.5.2" />
+    <PackageReference Include="Kszob.NET" Version="3.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RtfLibrary\Rtf.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DbApp.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Zasoby\Kszob.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Zasoby\upomnienr.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Zasoby\upr.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
